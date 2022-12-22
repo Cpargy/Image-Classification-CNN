@@ -47,7 +47,7 @@ model.compile(loss='categorical_crossentropy',
 # Train the model
 model.fit(x_train, y_train,
           batch_size=32,
-          epochs=15,
+          epochs=1,
           validation_data=(x_test, y_test))
 
 # Evaluate the model on the test set
@@ -61,7 +61,7 @@ while(True):
     file = input("Enter image name located in the Images folder, type n to stop: ")
     if file == 'n':
         break
-    path = "Images/" + file
+    path = "./Images/" + file
     try:
         img = tf.keras.utils.load_img(path,target_size=(32,32))
         x_new = np.array(img)
